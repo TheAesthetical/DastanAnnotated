@@ -1064,7 +1064,7 @@ class Kotla extends Square
 			}
 
 		}
-		// Otherwise, if it doesn't
+		// ...Otherwise, if it doesn't
 		else
 		{
 			// If the current player is the same as the player who owns the piece in the square, and the piece is either a regular piece of a mirza
