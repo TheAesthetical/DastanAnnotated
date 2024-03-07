@@ -1,4 +1,4 @@
-package dastan;
+package console;
 
 // 
 import java.io.BufferedReader;
@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * Class for use in the 2023 AQA exam for students using Java.
  * write and writeLine are the exact equivalents of print and println.
  */
-class Console
+public class Console
 {
 
 	public Console()

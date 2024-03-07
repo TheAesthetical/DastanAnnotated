@@ -6,7 +6,7 @@
 
  */
 
-package dastan;
+package dastanQuestions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import console.Console;
 //================================================================================================
 
 // Game class which contains main
-public class Game
+public class GameQuestions
 {
 	//+++++++++++++++++++++++++++++++++++++++++++++++
 	// Main
@@ -818,6 +818,23 @@ class Dastan
 		return newMoveOption;
 
 	}
+	
+	private MoveOption createRookMoveOption(int direction)
+	{
+		// Creates a new move option object for Chowkidar
+		MoveOption newMoveOption = new MoveOption("rook");
+
+		// Initialises a new move object
+		Move newMove = new Move(1 * direction , 1 * direction);
+		// And adds that to the list of possible moves
+		newMoveOption.addToPossibleMoves(newMove);
+		
+		newMove = new Move(1 * direction , 1 * direction);
+		newMoveOption.addToPossibleMoves(newMove);
+		
+		return newMoveOption;
+		
+	}
 
 	private MoveOption createMoveOption(String name , int direction)
 	{
@@ -835,6 +852,9 @@ class Dastan
 
 		case "jazair":
 			return createJazairMoveOption(direction);
+			
+		case "rook":
+			return createRookMoveOption(direction);
 
 			// Default case assumes a specific piece. Interesting design choice...
 		default:
@@ -856,6 +876,7 @@ class Dastan
 		players.get(0).addToMoveOptionQueue(createMoveOption("cuirassier" , 1));
 		players.get(0).addToMoveOptionQueue(createMoveOption("faujdar" , 1));
 		players.get(0).addToMoveOptionQueue(createMoveOption("jazair" , 1));
+		players.get(0).addToMoveOptionQueue(createMoveOption("rook" , 1));
 
 		// Player 2
 		players.get(1).addToMoveOptionQueue(createMoveOption("ryott" , -1));
@@ -863,6 +884,7 @@ class Dastan
 		players.get(1).addToMoveOptionQueue(createMoveOption("jazair" , -1));
 		players.get(1).addToMoveOptionQueue(createMoveOption("faujdar" , -1));
 		players.get(1).addToMoveOptionQueue(createMoveOption("cuirassier" , -1));
+		players.get(1).addToMoveOptionQueue(createMoveOption("rook" , -1));
 
 	}
 
